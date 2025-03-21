@@ -22,9 +22,6 @@ public class HeaderImpl implements Header {
     @ValueMapValue
     private String websiteName;
 
-    @ChildResource(name = "menuItems")
-    private List<Resource> menuItemsResource;
-
     @Override
     public String getLogoPath() {
         return logoPath;

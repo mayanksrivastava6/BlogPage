@@ -34,7 +34,7 @@ public class HomeBlogsImpl implements HomeBlog {
 
     @OSGiService
     private DefaultBlogsService defaultBlogsService;
-    int numberOfBlogs = 0;
+    int number = 0;
 
     @ValueMapValue
     private String parentPath;
@@ -66,19 +66,18 @@ public class HomeBlogsImpl implements HomeBlog {
 
         if (parentPage != null) {
             Iterator<Page> childPages = parentPage.listChildren();
-            while (childPages.hasNext() && numberOfBlogs < TotalBlogs) {
+            while (childPages.hasNext() && number< TotalBlogs) {
                 Page childPage = childPages.next();
                 LOG.info("Processing child page: {}", childPage.getPath());
 
-                // Fetch Created Date
                 Calendar created = childPage.getProperties().get("jcr:created", Calendar.class);
                 if (created == null) {
                     LOG.warn("No creation date found for page: {}", childPage.getPath());
-                    continue; // Skip this page if creation date is missing
+                    continue;
                 }
 
-                String heading = childPage.getTitle(); // jcr:title
-                String subHeading = childPage.getDescription(); // jcr:description
+                String heading = childPage.getTitle();
+                String subHeading = childPage.getDescription();
                 LOG.info("Title: {}, Description: {}", heading, subHeading);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("MMM dd");
@@ -90,7 +89,7 @@ public class HomeBlogsImpl implements HomeBlog {
                 String link = childPage.getPath() + ".html";
 
                 blogsList.add(new Blogs(heading, subHeading, formattedDate, image, link));
-                numberOfBlogs++;
+                number++;
             }
         } else {
             LOG.error("Current page is null! Cannot fetch blog list.");
@@ -107,7 +106,7 @@ public class HomeBlogsImpl implements HomeBlog {
             LOG.info("Image resource found at: {}", imageResource.getPath());
             ValueMap properties = imageResource.getValueMap();
 
-            if (properties.containsKey("jcr:data")) { // Check if actual image binary exists
+            if (properties.containsKey("jcr:data")) {
                 imagePath = childPage.getPath() + "/jcr:content/root/responsivegrid/image/file";
                 LOG.info("Image found, setting path: {}", imagePath);
             } else {
