@@ -1,0 +1,62 @@
+/* Container to hold all blog cards */
+.blog-container {
+    display: flex;
+    margin:auto;
+    margin-top:2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
+}
+
+/* Individual Card Styling */
+.card {
+    width: 30%; /* Each card occupies 30% of the width */
+    background-color: #fff;
+    gap:0.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Image Styling */
+.image img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Text Content */
+.text {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Date */
+.text p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Continue Reading Button */
+.text-bottom a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    width: max-content;
+}

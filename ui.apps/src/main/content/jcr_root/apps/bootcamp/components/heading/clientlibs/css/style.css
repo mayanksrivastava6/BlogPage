@@ -1,0 +1,22 @@
+.heading-component {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.heading-component h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.heading-component .author {
+    font-size: 1em;
+    color: #666;
+}
+
+.heading-component .date {
+    font-size: 0.9em;
+    color: #999;
+}

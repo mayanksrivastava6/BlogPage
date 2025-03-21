@@ -1,0 +1,26 @@
+<sly data-sly-use.model="com.bootcamp.demo.core.models.HomeBlog" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+
+<!-- Include CSS and JS from the student clientlib -->
+<sly data-sly-call="${clientlib.css @ categories='clientlib.homeblogs'}" />
+<!-- Blog List Rendering -->
+<div class="blog-container">
+    <sly data-sly-list.item="${model.blogList}">
+        <div class="card">
+            <div class="image">
+                <img src="${item.image}" alt="thumbnail" />
+            </div>
+            <div class="text">
+                <h1 class="blue">${item.heading}</h1>
+                <p>${item.formattedDate}</p>
+                <p>${item.subHeading}</p>
+                <div class="text-bottom">
+                    <a href="${item.link @ extension = 'html', context = 'uri'}" style="color:blue; font-size:0.7rem">Continue reading</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </sly>
+</div>

@@ -1,0 +1,12 @@
+<sly data-sly-use.model="com.bootcamp.demo.core.models.Archive" />
+
+<h1>Archives</h1>
+<ul>
+    <sly data-sly-list.date="${model.formattedDates.entrySet}">
+        <li>
+            <a href="${model.parentPath @ context='uri'}?year=${date.value.year}&month=${date.value.month}">
+                ${date.value.month} ${date.value.year}
+            </a>
+        </li>
+    </sly>
+</ul>

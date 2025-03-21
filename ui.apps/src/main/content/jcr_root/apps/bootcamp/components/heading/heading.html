@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.bootcamp.demo.core.models.Heading"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='clientlib.heading'}" />
+<div class="heading-component">
+    <h1>${model.title}</h1>
+    <p class="author">By: ${model.author}</p>
+    <p class="date">Date: ${model.date}</p>
+</div>

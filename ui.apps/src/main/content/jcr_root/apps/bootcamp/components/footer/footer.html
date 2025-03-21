@@ -1,0 +1,17 @@
+<sly data-sly-use.footerModel="com.bootcamp.demo.core.models.Footer" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='clientlib.footer'}" />
+
+<footer class ="footer">
+    <br>
+    <p>HomePage Blogs</p>
+    <ul>
+        <sly data-sly-list.menuItems="${footerModel.menuItems}">
+            <li>
+                <a href="${menuItems.Link @ extension = 'html', context='uri'}">${menuItems.Text}</a>
+            </li>
+        </sly>
+
+    </ul>
+    <p>© 2022 - 2023 TTN Bootcamp. All rights reserved.</p>
+</footer>

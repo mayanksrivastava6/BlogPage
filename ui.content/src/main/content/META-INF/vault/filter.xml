@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/bootcamp" mode="merge"/>
+    <filter root="/content/bootcamp" mode="merge"/>
+    <filter root="/content/dam/bootcamp" mode="merge">
+        <exclude pattern="/content/dam/bootcamp(/.*)?"/>
+        <include pattern="/content/dam/bootcamp/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/bootcamp/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/bootcamp" mode="merge"/>
+</workspaceFilter>
