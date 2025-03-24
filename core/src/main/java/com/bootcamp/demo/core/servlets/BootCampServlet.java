@@ -74,7 +74,7 @@ public class BootCampServlet extends SlingSafeMethodsServlet {
                 for (Map.Entry<String, Object> entry : pageProperties.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    pageJSON.put(key, value.toString()); // Convert properties to String
+                    pageJSON.put(key, value.toString());
                 }
             }
         } catch (JSONException e) {

@@ -1,6 +1,5 @@
 package com.bootcamp.demo.core.models.Impl;
 
-import aQute.bnd.header.Attrs;
 import com.bootcamp.demo.core.models.HomeBlog;
 import com.bootcamp.demo.core.models.PublishBlog;
 import com.bootcamp.demo.core.services.DefaultBlogsService;
@@ -32,8 +31,6 @@ public class HomeBlogsImpl implements HomeBlog {
     @SlingObject
     private SlingHttpServletRequest request;
 
-    @OSGiService
-    private DefaultBlogsService defaultBlogsService;
     int number = 0;
 
     @ValueMapValue

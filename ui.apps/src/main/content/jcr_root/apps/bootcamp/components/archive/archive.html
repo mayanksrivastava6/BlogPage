@@ -4,7 +4,7 @@
 <ul>
     <sly data-sly-list.date="${model.formattedDates.entrySet}">
         <li>
-            <a href="${model.parentPath @ context='uri'}?year=${date.value.year}&month=${date.value.month}">
+            <a href="${model.parentPath @ extension = 'html' ,context='uri'}?year=${date.value.year}&month=${date.value.month}">
                 ${date.value.month} ${date.value.year}
             </a>
         </li>

@@ -56,7 +56,7 @@ public class PublishBlogImpl implements PublishBlog {
                 while (childPages.hasNext() && numberOfBlogs < defaultBlogsService.getDefault_blogs()) {
                     Page childPage = childPages.next();
                     Calendar created = childPage.getProperties().get("jcr:created", Calendar.class);
-//
+
                     if (created == null) {
                         LOG.warn("No creation date found for page: {}", childPage.getPath());
                         continue;
@@ -77,7 +77,7 @@ public class PublishBlogImpl implements PublishBlog {
                     String subHeading = childPage.getDescription();
                     String formattedDate = new SimpleDateFormat("MMM dd").format(created.getTime());
                     String image = getImagePath(childPage);
-                    String link = childPage.getPath() + ".html";
+                    String link = childPage.getPath() + ".html";//to access published page we used .html
 
                     blogsList.add(new Blogs(heading, subHeading, formattedDate, image, link));
                     numberOfBlogs++;
